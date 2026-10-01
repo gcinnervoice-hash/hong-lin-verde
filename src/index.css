@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm paper cream */
+    --background: 45 33% 92%;
+    /* Deep forest green rgb(6, 64, 19) */
+    --foreground: 133 83% 14%;
+    --card: 45 33% 92%;
+    --card-foreground: 133 83% 14%;
+    --popover: 45 33% 95%;
+    --popover-foreground: 133 83% 14%;
+    --primary: 133 83% 14%;
+    --primary-foreground: 45 33% 95%;
+    --secondary: 44 24% 86%;
+    --secondary-foreground: 133 83% 14%;
+    --muted: 44 24% 86%;
+    --muted-foreground: 130 20% 35%;
+    --accent: 44 24% 86%;
+    --accent-foreground: 133 83% 14%;
+    --destructive: 0 60% 40%;
+    --destructive-foreground: 45 33% 95%;
+    --border: 130 20% 35%;
+    --input: 130 20% 35%;
+    --ring: 133 83% 14%;
+    --radius: 0.25rem;
+    --sidebar-background: 45 33% 92%;
+    --sidebar-foreground: 133 83% 14%;
+    --sidebar-primary: 133 83% 14%;
+    --sidebar-primary-foreground: 45 33% 95%;
+    --sidebar-accent: 44 24% 86%;
+    --sidebar-accent-foreground: 133 83% 14%;
+    --sidebar-border: 130 20% 35%;
+    --sidebar-ring: 133 83% 14%;
+  }
+}
+
+@layer components {
+  .campo {
+    @apply mt-2 min-h-11 w-full border border-foreground/20 bg-transparent px-3 text-sm outline-none focus:border-foreground;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border/20;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  }
+  .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+  }
+  ::selection {
+    background: hsl(var(--foreground) / 0.15);
+  }
+}

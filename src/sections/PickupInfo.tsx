@@ -2,7 +2,7 @@ const STEPS = [
   {
     n: '01',
     title: 'Elige tu planta',
-    text: 'Mira el catálogo y escríbenos por WhatsApp con la planta que te interesa.',
+    text: 'Mira el catálogo y escríbenos por Facebook con la planta que te interesa.',
   },
   {
     n: '02',
@@ -34,7 +34,7 @@ export default function PickupInfo() {
         </div>
 
         <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          La dirección exacta del punto de recogida se comparte por WhatsApp al confirmar
+          La dirección exacta del punto de recogida se comparte por Facebook al confirmar
           la reserva. Si necesitas otro día u hora, pregúntanos — solemos poder adaptarnos.
         </p>
       </div>

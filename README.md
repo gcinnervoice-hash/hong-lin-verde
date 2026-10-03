@@ -10,7 +10,7 @@ copy .env.example .env
 npm run dev
 ```
 
-Set `VITE_WHATSAPP_NUMBER` in `.env` to the business WhatsApp number using a country code and digits only. Vite exposes this value to the browser, so do not place secrets in it.
+Set `VITE_FACEBOOK_URL` in `.env` to the business Facebook page or Messenger URL. Vite exposes this value to the browser, so do not place secrets in it.
 
 ## Available commands
 

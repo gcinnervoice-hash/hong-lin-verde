@@ -1,13 +1,16 @@
 export const STUDIO_NAME = 'Estudio Verde Hong'
 
-const FALLBACK_WHATSAPP_NUMBER = '34643424977'
-const configuredWhatsAppNumber = import.meta.env.VITE_WHATSAPP_NUMBER?.replace(/\D/g, '')
+export const WHATSAPP_NUMBER = '+34 643 42 49 77'
+export const FACEBOOK_URL = 'https://www.facebook.com/share/1EntaEhMxj/?mibextid=wwXIfr'
+const WHATSAPP_PHONE = '34643424977'
 
-// Set VITE_WHATSAPP_NUMBER in .env for the live business contact number.
-export const WHATSAPP_NUMBER = configuredWhatsAppNumber || FALLBACK_WHATSAPP_NUMBER
+export function whatsappLink(message?: string): string {
+  const url = `https://wa.me/${WHATSAPP_PHONE}`
+  return message ? `${url}?text=${encodeURIComponent(message)}` : url
+}
 
-export function whatsappLink(message: string): string {
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+export function facebookLink(): string {
+  return FACEBOOK_URL
 }
 
 export const DEFAULT_MESSAGE =

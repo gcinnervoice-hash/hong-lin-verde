@@ -1,7 +1,6 @@
 import Header from '../sections/Header'
 import Hero from '../sections/Hero'
-import FeaturedPlants from '../sections/FeaturedPlants'
-import PickupInfo from '../sections/PickupInfo'
+import WhyUs from '../sections/WhyUs'
 import ContactCta, { Footer, WhatsAppFloat } from '../sections/Contact'
 
 export default function Home() {
@@ -10,8 +9,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <FeaturedPlants />
-        <PickupInfo />
+        <WhyUs />
         <ContactCta />
       </main>
       <Footer />

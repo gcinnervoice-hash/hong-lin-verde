@@ -10,7 +10,7 @@ const CLAVE_ADMIN = '741013'
 
 interface Ajustes {
   nombreTienda: string
-  whatsapp: string
+  facebook: string
   direccion: string
   horario: string
   entrega: string
@@ -18,7 +18,7 @@ interface Ajustes {
 
 const ajustesIniciales: Ajustes = {
   nombreTienda: 'Estudio Verde Hong',
-  whatsapp: '+34 643 42 49 77',
+  facebook: 'https://www.facebook.com/estudioverdehong',
   direccion: 'Madrid y Toledo',
   horario: 'Lunes a sábado, 10:00–18:00',
   entrega: 'Envío gratis para pedidos superiores a 30 € cerca de Toledo y 50 € en Madrid.',
@@ -28,10 +28,12 @@ function leerAjustes(): Ajustes {
   const guardados = localStorage.getItem(CLAVE_AJUSTES)
   if (!guardados) return ajustesIniciales
 
-  const ajustes = JSON.parse(guardados) as Ajustes
-  return ajustes.whatsapp === '34600000000'
-    ? { ...ajustes, whatsapp: '+34 643 42 49 77' }
-    : ajustes
+  const ajustes = JSON.parse(guardados) as Partial<Ajustes> & { whatsapp?: string }
+  return {
+    ...ajustesIniciales,
+    ...ajustes,
+    facebook: ajustes.facebook || 'https://www.facebook.com/estudioverdehong',
+  }
 }
 
 function crearBorrador(): Planta {
@@ -111,5 +113,5 @@ function PanelAjustes() {
   const [ajustes, establecerAjustes] = useState(leerAjustes)
   const [mensaje, establecerMensaje] = useState('')
   const guardar = (evento: FormEvent<HTMLFormElement>) => { evento.preventDefault(); localStorage.setItem(CLAVE_AJUSTES, JSON.stringify(ajustes)); establecerMensaje('Ajustes guardados.') }
-  return <section><p className="text-sm text-muted-foreground">Configuración</p><h1 className="font-display mt-2 text-3xl font-medium sm:text-4xl">Ajustes</h1><form onSubmit={guardar} className="mt-8 max-w-2xl border border-foreground/15 bg-background p-5 sm:p-7"><div className="grid gap-4 sm:grid-cols-2"><Campo etiqueta="Nombre de la tienda"><input value={ajustes.nombreTienda} onChange={(evento) => establecerAjustes({ ...ajustes, nombreTienda: evento.target.value })} className="campo" /></Campo><Campo etiqueta="WhatsApp"><input value={ajustes.whatsapp} onChange={(evento) => establecerAjustes({ ...ajustes, whatsapp: evento.target.value })} className="campo" /></Campo></div><Campo etiqueta="Dirección"><input value={ajustes.direccion} onChange={(evento) => establecerAjustes({ ...ajustes, direccion: evento.target.value })} className="campo mt-2" /></Campo><Campo etiqueta="Horario"><input value={ajustes.horario} onChange={(evento) => establecerAjustes({ ...ajustes, horario: evento.target.value })} className="campo mt-2" /></Campo><Campo etiqueta="Información de entrega"><textarea value={ajustes.entrega} onChange={(evento) => establecerAjustes({ ...ajustes, entrega: evento.target.value })} rows={3} className="campo mt-2" /></Campo>{mensaje && <p role="status" className="mt-4 text-sm">{mensaje}</p>}<button className="mt-6 inline-flex min-h-11 items-center gap-2 bg-foreground px-4 text-sm font-medium text-primary-foreground"><Save className="size-4" />Guardar</button></form></section>
+  return <section><p className="text-sm text-muted-foreground">Configuración</p><h1 className="font-display mt-2 text-3xl font-medium sm:text-4xl">Ajustes</h1><form onSubmit={guardar} className="mt-8 max-w-2xl border border-foreground/15 bg-background p-5 sm:p-7"><div className="grid gap-4 sm:grid-cols-2"><Campo etiqueta="Nombre de la tienda"><input value={ajustes.nombreTienda} onChange={(evento) => establecerAjustes({ ...ajustes, nombreTienda: evento.target.value })} className="campo" /></Campo><Campo etiqueta="Facebook"><input value={ajustes.facebook} onChange={(evento) => establecerAjustes({ ...ajustes, facebook: evento.target.value })} className="campo" /></Campo></div><Campo etiqueta="Dirección"><input value={ajustes.direccion} onChange={(evento) => establecerAjustes({ ...ajustes, direccion: evento.target.value })} className="campo mt-2" /></Campo><Campo etiqueta="Horario"><input value={ajustes.horario} onChange={(evento) => establecerAjustes({ ...ajustes, horario: evento.target.value })} className="campo mt-2" /></Campo><Campo etiqueta="Información de entrega"><textarea value={ajustes.entrega} onChange={(evento) => establecerAjustes({ ...ajustes, entrega: evento.target.value })} rows={3} className="campo mt-2" /></Campo>{mensaje && <p role="status" className="mt-4 text-sm">{mensaje}</p>}<button className="mt-6 inline-flex min-h-11 items-center gap-2 bg-foreground px-4 text-sm font-medium text-primary-foreground"><Save className="size-4" />Guardar</button></form></section>
 }

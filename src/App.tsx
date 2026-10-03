@@ -7,8 +7,9 @@ import Plantas from './pages/Plantas'
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/plantas" element={<Plantas />} />
+      <Route path="/" element={<Plantas />} />
+      <Route path="/plantas" element={<Navigate to="/" replace />} />
+      <Route path="/como-funciona" element={<Home />} />
       <Route path="/plantas/:slug" element={<PlantDetail />} />
       <Route path="/admin/login" element={<AdminLogin />} />
       <Route path="/admin/*" element={<Admin />} />

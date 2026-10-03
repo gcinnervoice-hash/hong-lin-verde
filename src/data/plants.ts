@@ -9,6 +9,7 @@ export interface Planta {
   ambiente: AmbientePlanta
   descripcion: string
   estado: EstadoPlanta
+  vendidaEn?: string
   destacado: boolean
 }
 

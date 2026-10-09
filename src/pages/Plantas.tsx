@@ -39,6 +39,12 @@ export default function Plantas() {
             <div>
               <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Estudio Verde Hong</p>
               <h1 className="font-display mt-4 text-4xl font-light sm:text-6xl">Plantas</h1>
+              <div className="mt-4 inline-flex items-center gap-2.5 rounded-sm border border-foreground/15 bg-white px-4 py-2.5 shadow-xs">
+                <span className="size-2 rounded-full bg-emerald-600 shrink-0" aria-hidden="true" />
+                <p className="text-sm font-bold text-foreground sm:text-base">
+                  Más verde, más saludable y hasta un 20% más económico que en Floreia Local.
+                </p>
+              </div>
             </div>
             <div className="flex flex-wrap rounded-sm border border-foreground/20 p-1" aria-label="Filtrar plantas">
               {filtros.map((opcion) => (

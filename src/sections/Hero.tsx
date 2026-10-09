@@ -14,7 +14,14 @@ export default function Hero() {
     <section id="como-funciona" className="pt-16">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="py-14 sm:py-20 md:py-24">
-          <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Estudio Verde Hong</p>
+          <div className="flex items-center gap-2.5">
+            <img
+              src="/logo.svg"
+              alt=""
+              className="size-5 rounded-full border border-foreground/20 object-cover"
+            />
+            <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Estudio Verde Hong</p>
+          </div>
           <h1 className="font-display mt-5 max-w-3xl text-4xl font-light leading-[1.1] sm:text-6xl md:text-7xl">Cómo funciona</h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Encontrar una planta para tu casa es sencillo: mira el catálogo, escríbenos y coordinamos contigo la recogida.

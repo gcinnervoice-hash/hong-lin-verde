@@ -4,7 +4,7 @@ import { facebookLink, whatsappLink } from '../config'
 import PlantGallery from '../components/PlantGallery'
 import { slugPlanta } from '../data/plants'
 import { usePlantas } from '../lib/catalogo'
-import { FacebookIcon, Footer, WhatsAppFloat, WhatsAppIcon } from '../sections/Contact'
+import { FacebookIcon, Footer, WhatsAppIcon } from '../sections/Contact'
 import Header from '../sections/Header'
 
 export default function PlantDetail() {
@@ -54,7 +54,6 @@ export default function PlantDetail() {
         </section>
       </main>
       <Footer />
-      <WhatsAppFloat />
     </div>
   )
 }

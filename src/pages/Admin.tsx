@@ -99,9 +99,18 @@ export function AdminLogin() {
   return (
     <main className="grid min-h-screen place-items-center bg-secondary/15 px-5 py-12">
       <div className="w-full max-w-md border border-foreground/15 bg-background p-7 sm:p-9 shadow-sm">
-        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Estudio Verde Hong</p>
-        <h1 className="font-display mt-2 text-3xl font-medium">Administración</h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <div className="flex items-center gap-3">
+          <img
+            src="/logo.svg"
+            alt=""
+            className="size-11 rounded-full border border-foreground/20 object-cover shadow-xs"
+          />
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Estudio Verde Hong</p>
+            <h1 className="font-display text-2xl font-medium">Administración</h1>
+          </div>
+        </div>
+        <p className="mt-3 text-sm text-muted-foreground">
           Panel de control con sincronización en tiempo real vía Supabase.
         </p>
 
@@ -366,9 +375,16 @@ function BarraLateral({
     <aside className="fixed inset-y-0 left-0 hidden w-64 border-r border-foreground/15 bg-background p-5 md:flex md:flex-col justify-between">
       <div>
         <div className="flex items-center justify-between">
-          <div>
-            <p className="font-display text-lg font-medium">Estudio Verde</p>
-            <p className="text-xs text-muted-foreground uppercase tracking-wider">Administración</p>
+          <div className="flex items-center gap-2.5">
+            <img
+              src="/logo.svg"
+              alt=""
+              className="size-8 rounded-full border border-foreground/20 object-cover shadow-xs"
+            />
+            <div>
+              <p className="font-display text-base font-medium leading-tight">Estudio Verde</p>
+              <p className="text-[11px] text-muted-foreground uppercase tracking-wider">Administración</p>
+            </div>
           </div>
           <Link
             to="/"

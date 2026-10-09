@@ -1,7 +1,7 @@
 import Header from '../sections/Header'
 import Hero from '../sections/Hero'
 import WhyUs from '../sections/WhyUs'
-import ContactCta, { Footer, WhatsAppFloat } from '../sections/Contact'
+import ContactCta, { Footer } from '../sections/Contact'
 
 export default function Home() {
   return (
@@ -13,7 +13,6 @@ export default function Home() {
         <ContactCta />
       </main>
       <Footer />
-      <WhatsAppFloat />
     </div>
   )
 }

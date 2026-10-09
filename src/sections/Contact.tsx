@@ -41,7 +41,14 @@ export function Footer() {
     <footer className="border-t border-foreground/15">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 sm:flex-row sm:items-end sm:justify-between sm:px-8 sm:py-14">
         <div>
-          <p className="font-display text-lg font-medium">{STUDIO_NAME}</p>
+          <div className="flex items-center gap-3">
+            <img
+              src="/logo.svg"
+              alt={STUDIO_NAME}
+              className="size-9 rounded-full border border-foreground/20 object-cover shadow-xs"
+            />
+            <p className="font-display text-lg font-medium">{STUDIO_NAME}</p>
+          </div>
           <p className="mt-2 text-sm text-muted-foreground">Plantas de interior con recogida local en Madrid y Toledo.</p>
           <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 transition-opacity hover:opacity-70">WhatsApp: {WHATSAPP_NUMBER}</a>
@@ -51,13 +58,5 @@ export function Footer() {
         <p className="text-xs text-muted-foreground/80">© {new Date().getFullYear()} {STUDIO_NAME}</p>
       </div>
     </footer>
-  )
-}
-
-export function WhatsAppFloat() {
-  return (
-    <a href={whatsappLink(DEFAULT_MESSAGE)} target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/15 transition-transform hover:scale-105" style={{ bottom: 'max(1.25rem, env(safe-area-inset-bottom))' }}>
-      <WhatsAppIcon className="h-7 w-7" aria-hidden="true" />
-    </a>
   )
 }

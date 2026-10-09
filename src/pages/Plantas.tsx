@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react'
 import PlantCard from '../components/PlantCard'
 import type { AmbientePlanta, EstadoPlanta } from '../data/plants'
 import { usePlantas } from '../lib/catalogo'
-import { Footer, WhatsAppFloat } from '../sections/Contact'
+import { Footer } from '../sections/Contact'
 import Header from '../sections/Header'
 
 type Filtro = 'Todo' | AmbientePlanta | EstadoPlanta
@@ -37,7 +37,14 @@ export default function Plantas() {
         <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
-              <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Estudio Verde Hong</p>
+              <div className="flex items-center gap-2.5">
+                <img
+                  src="/logo.svg"
+                  alt=""
+                  className="size-5 rounded-full border border-foreground/20 object-cover"
+                />
+                <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Estudio Verde Hong</p>
+              </div>
               <h1 className="font-display mt-4 text-4xl font-light sm:text-6xl">Plantas</h1>
               <div className="mt-4 inline-flex items-center gap-2.5 rounded-sm border border-foreground/15 bg-white px-4 py-2.5 shadow-xs">
                 <span className="size-2 rounded-full bg-emerald-600 shrink-0" aria-hidden="true" />
@@ -90,7 +97,6 @@ export default function Plantas() {
         )}
       </main>
       <Footer />
-      <WhatsAppFloat />
     </div>
   )
 }
